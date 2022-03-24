@@ -1,0 +1,32 @@
+{
+	"name": "Hyperf & PostgreSQL",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"sqltools.connections": [{
+			"name": "Container database",
+			"driver": "PostgreSQL",
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 5432,
+			"database": "app",
+			"username": "postgres",
+			"password": "postgres"
+		}]
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"mtxr.sqltools",
+		"mtxr.sqltools-driver-pg",
+		"github.copilot",
+		"bmewburn.vscode-intelephense-client",
+		"mehedidracula.php-namespace-resolver",
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [9003, 9000, 8080, 5432, 9501],
+}
